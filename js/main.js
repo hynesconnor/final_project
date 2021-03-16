@@ -24,6 +24,7 @@
 
       } else if (index === 1) {
         map.setView(new L.LatLng(44.00, -120.50), 7.5);
+        map.addLayer(polygonLayer);
         map.addLayer(pointLayer);
       } else if (index === 2) {
         //Relocate to Seattle
