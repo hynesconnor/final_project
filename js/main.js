@@ -1,15 +1,9 @@
-    // 1. Select those elments that wil be frequent used.
     var storyboard = $("#storyboard");
     var scene = $(".scene");
-    // 2. Declare the maps, thematic layers and the base maps/layers.
     var map, polygonLayer, pointLayer, satelliteBasemap;
-
-    // 3. Initialize the geonarrative structure using scrollama
     var scriptPanel = scrollama();
 
-    // 4. Define Generic window resize listener event
     function handleResize() {
-      // update the height of each scene elements
       var sceneH = Math.floor(window.innerHeight * 0.75);
       scene.css("height", sceneH + "px");
 
@@ -20,11 +14,9 @@
         .css("height", storyboardHeight + "px")
         .css("top", storyboardMarginTop + "px");
 
-      // tell scrollama to update new element dimensions
       scriptPanel.resize();
     }
 
-    // 5. The function performs when a scene enters the storyboard
     function handleSceneEnter(response) {
       var index = response.index;
 
@@ -45,7 +37,7 @@
       }
     }
 
-    // 6. The function performs when a scene exits the storyboard
+
     function handleSceneExit(response) {
       var index = response.index;
 
@@ -55,34 +47,20 @@
       } else if (index === 1) {
         map.removeLayer(pointLayer);
       } else if (index === 3) {
-        //exit to Portland
-
       } else if (index === 6) {
         $("#cover").css("visibility", "visible");
       }
     }
 
-    // 7. the function performs when this html document is ready.
     $(document).ready(function() {
-
-      // 8. Intialize the layout.
-      // Force a resize on load to ensure proper dimensions are sent to scrollama
       handleResize();
       window.scrollTo(0, 0);
-      // Bind the resize function to the window resize event
       window.addEventListener("resize", handleResize);
 
-      // 9. Use a promise mechnism to asynchrously load the required geojson datasets.
       Promise.all([
         $.getJSON("assets/data/oregon_county.geojson"),
         $.getJSON("assets/data/oregon_fire.geojson")
       ]).then(function(datasets) {
-
-        // 10. After the data are successfully loaded, the then funciton will execute in order to
-        //    a) preprocess the data as map layers
-        //    b) initialize the script panel
-        //    c) initialize the map and layers.
-
 
         polygonLayer = L.geoJSON(datasets[0], {
           fillColor: '#a9cce3',
@@ -99,21 +77,19 @@
             fillColor: '#ec7063 ',
             weight: 1.3,
             opacity: .8,
-            color: '#922b21 ',  //Outline color
+            color: '#922b21 ',
             fillOpacity: 0.7
         });
 
         scriptPanel
           .setup({
-            step: ".scene", // all the scenes.
-            offset: 0.33,   // the location of the enter and exit trigger
-            debug: false  // toggler on or off the debug mode.
+            step: ".scene",
+            offset: 0.33,
+            debug: false
           })
           .onStepEnter(handleSceneEnter)
           .onStepExit(handleSceneExit);
       });
-
-
 
       map = L.map('map', {
         center: [44.00, -120.50],
@@ -122,14 +98,9 @@
         zoomControl: false,
         maxZoom: 10,
         minZoom: 3,
-        detectRetina: true // detect whether the sceen is high resolution or not.
+        detectRetina: true
       });
-
 
       satelliteBasemap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
       map.addLayer(satelliteBasemap);
-
-      
-
-      
     });

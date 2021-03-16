@@ -175,7 +175,6 @@ p {
     border: 5px solid white;
 }
 
-
 [data-scene="6"] {
     background: url("assets/img/background.jpg") no-repeat center center;
     -webkit-background-size: cover;
