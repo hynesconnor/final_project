@@ -19,6 +19,7 @@ The goal of this project is to educate and inform on the event. Living in Washin
 - https://www.newsweek.com/oregon-fire-satellite-images-show-widespread-devastation-1530912#slideshow/1634833
 - https://www.statesmanjournal.com/story/news/2020/10/09/opal-creek-wilderness-burned-jawbone-flats-mount-jefferson-park-beachie-creek-fire-lionshead-fire/5932595002/
 - https://www.bbc.com/news/world-us-canada-54180049
+- https://www.nytimes.com/video/us/100000007341513/oregon-fires-path.html
 
 
 ### Libraries
