@@ -1,4 +1,4 @@
-## 2020 Oregon Wildfires [Link To Project](https://hynesconnor.github.io/wildfire_webmap/)
+## 2020 Oregon Wildfires: [Link To Project](https://hynesconnor.github.io/wildfire_webmap/)
 
 **Project Description**
 
