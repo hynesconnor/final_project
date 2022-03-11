@@ -7,6 +7,8 @@ This project covers the 2020 Wildfires that occured in Oregon. It looks at the r
 
 The goal of this project is to educate and inform on the event. Living in Washington, these fires were not particularly impactful on my everyday life, but here in Seattle, we were impacted by the smoke that was a result of the wildfires. I thought it would be interesting to learn more about the topic, as it was something that came and went fairly quickly, but was devastating to so many nearby. I would hope that through viewing this project, you will gain some basic knowledge on the events, and will continue to look into how the area was effected, and how the same issues could occur in Washington State if we are not careful with how we mitagate wildire risks.
 
+Scaling issues may be present, please full screen the webpage to avoid them.
+
 ## Data Sources
 
 - [Main Wildfire Map Data](https://www.arcgis.com/apps/webappviewer/index.html?id=94b379a91e0f47cb91712da22f603d39)
